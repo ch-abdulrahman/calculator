@@ -1,0 +1,281 @@
+@font-face {
+    font-family: Flaemische;
+    src: url(Flaemische.ttf);
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url(Poppins.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+    --body-color: #e6e9f8;
+    --light-black: #444;
+    --dark-black: #07141b;
+    --orange: #dc572a;
+    --dark-shadow: rgba(94, 104, 121, 0.288);
+    --light-shadow: rgba(255, 255, 255, 0.9);
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    background: var(--body-color);
+}
+
+body.dark-theme {
+    --body-color: #07141b;
+    --light-black: #fff;
+    --dark-black: #fff;
+    --dark-shadow: #000;
+    --light-shadow: rgba(255, 255, 255, 0.08);
+}
+
+.container {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.logo {
+    font-size: 70px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    font-family: Flaemische;
+    color: var(--dark-black);
+    user-select: none;
+}
+
+.logo span {
+    font-size: 80px;
+    color: var(--orange);
+    font-family: Flaemische;
+}
+
+.switch-holder {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 25px;
+    border-radius: 7px;
+    background: var(--body-color);
+    box-shadow: -3px -3px 7px var(--light-shadow), 2px 2px 5px var(--dark-shadow);
+}
+
+.switch-label {
+    color: var(--dark-black);
+    margin-right: 20px;
+    user-select: none;
+    font-family: Poppins;
+}
+
+body.light-theme .switch-label {
+    font-weight: bold;
+}
+
+.switch-toggle input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    z-index: -2;
+}
+
+.switch-toggle input[type="checkbox"]+label {
+    position: relative;
+    display: inline-block;
+    width: 70px;
+    height: 35px;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: inset -8px -8px 15px rgb(255, 255, 255),
+        inset 9px 9px 9px rgba(0, 0, 0, 0.25);
+}
+
+body.dark-theme .switch-toggle input[type="checkbox"]+label {
+    box-shadow: inset -8px -8px 15px var(--light-shadow), inset 9px 9px 9px #000;
+}
+
+.switch-toggle input[type="checkbox"]+label::before {
+    position: absolute;
+    content: "OFF";
+    font-size: 12px;
+    text-align: center;
+    top: 9px;
+    left: 7px;
+    width: 30px;
+    border-radius: 15px;
+    font-family: Poppins;
+    background-color: #d1dad3;
+    box-shadow: -3px -3px 5px rgba(255, 255, 255, 0.5),
+        3px 3px 5px rgba(0, 0, 0, 0.25);
+    transition: 0.3s ease-in-out;
+}
+
+.switch-toggle input[type="checkbox"]:checked+label::before {
+    left: 50%;
+    content: "ON";
+    color: #fff;
+    background-color: var(--orange);
+    box-shadow: none;
+}
+
+.calculator {
+    width: 350px;
+    height: 650px;
+    border-radius: 10px;
+    padding: 40px 35px;
+    position: relative;
+    box-shadow: -3px -3px 7px var(--light-shadow), 2px 2px 5px var(--dark-shadow);
+}
+
+.theme-btn {
+    position: absolute;
+    top: 7.5px;
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: -2px -2px 2px var(--light-shadow), 2px 2px 2px var(--dark-shadow),
+        inset -2px -2px 2px var(--light-shadow),
+        inset 2px 2px 2px var(--dark-shadow);
+}
+
+ion-icon {
+    display: none;
+    font-size: 15px;
+    color: var(--dark-black);
+}
+
+body.light-theme .moon,
+body.dark-theme .sunny {
+    display: block;
+}
+
+.screen {
+    color: var(--dark-black);
+    height: 40%;
+    padding: 4px 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+    box-shadow: inset -3px -3px 7px var(--light-shadow),
+        inset 2px 2px 5px var(--dark-shadow);
+    overflow: auto;
+    /* Hide scrollbar for IE and Edge */
+    -ms-overflow-style: none;
+    /* Hide scrollbar for Firefox */
+    scrollbar-width: none;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.screen::-webkit-scrollbar {
+    display: none;
+}
+
+.display {
+    text-align: right;
+    font-size: 52px;
+    line-height: 52px;
+    background: transparent;
+}
+
+.ans {
+    text-align: right;
+    font-size: 21px;
+    line-height: 35px;
+}
+
+.buttons {
+    height: 60%;
+    display: grid;
+    grid-template-columns: repeat(4, 50px);
+    justify-content: space-around;
+    margin-top: 30px;
+    user-select: none;
+}
+
+.buttons button {
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background: transparent;
+    font-size: 25px;
+    font-weight: bold;
+    color: var(--light-black);
+    box-shadow: -3px -3px 7px var(--light-shadow), 2px 2px 5px var(--dark-shadow);
+}
+
+.buttons button:active {
+    transform: scale(0.95);
+    box-shadow: inset -3px -3px 7px var(--light-shadow),
+        inset 2px 2px 5px var(--dark-shadow), -3px -3px 7px var(--light-shadow),
+        2px 2px 5px var(--dark-shadow);
+}
+
+.buttons .fas {
+    color: var(--orange);
+    pointer-events: none;
+}
+
+.buttons .equals {
+    background: var(--orange);
+}
+
+.buttons .equals .fas {
+    color: white;
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .logo {
+        font-size: 55px;
+        margin-bottom: 0px;
+    }
+
+    .logo span {
+        font-size: 65px;
+    }
+
+    .switch-holder {
+        position: absolute;
+        width: 350px;
+        left: -360px;
+        top: -80px;
+        left: 50%;
+        padding: 20px;
+        transform: translateX(-50%);
+        justify-content: space-evenly;
+        transition-duration: 1s;
+        transition-property: top;
+        z-index: 100;
+    }
+
+    .switch-holder.active {
+        top: 0px;
+    }
+
+    .theme-btn {
+        display: flex;
+    }
+}

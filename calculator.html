@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="calculator.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="shortcut icon" href="https://img.icons8.com/color/48/000000/calculator--v2.png" type="image/x-icon">
+
+</head>
+
+<body class="light-theme">
+    <div class="container">
+        <div class="col50">
+            <div class="logo" title="Double click on logo to turn ON/OFF Dark Mode.">
+                <span>C</span>alculator
+            </div>
+            <div class="switch-holder">
+                <div class="switch-label">Dark Mode</div>
+                <div class="switch-toggle">
+                    <input type="checkbox" id="checkbox">
+                    <label for="checkbox"></label>
+                </div>
+            </div>
+        </div>
+        <div class="col50">
+            <div class="calculator">
+                <div class="theme-btn">
+                    <ion-icon class="moon" name="moon"></ion-icon>
+                    <ion-icon class="sunny" name="sunny"></ion-icon>
+                </div>
+                <div class="screen">
+                    <div class="display">0</div>
+                    <div class="ans"></div>
+                </div>
+                <div class="buttons">
+                    <button value="(">(</button>
+                    <button value=")">)</button>
+                    <button value="Backspace"><i class="fas fa-backspace"></i></button>
+                    <button value="÷"><i class="fas fa-divide"></i></button>
+                    <button value="7">7</button>
+                    <button value="8">8</button>
+                    <button value="9">9</button>
+                    <button value="×"><i class="fas fa-times"></i></button>
+                    <button value="4">4</button>
+                    <button value="5">5</button>
+                    <button value="6">6</button>
+                    <button value="-"><i class="fas fa-minus"></i></button>
+                    <button value="1">1</button>
+                    <button value="2">2</button>
+                    <button value="3">3</button>
+                    <button value="+"><i class="fas fa-plus"></i></button>
+                    <button value="Clear">C</button>
+                    <button value="0">0</button>
+                    <button value=".">.</button>
+                    <button value='=' class="equals"><i class="fas fa-equals"></i></button>
+                </div>
+            </div> <!-- calculator end -->
+        </div> <!-- col50 end -->
+    </div> <!-- container end -->
+    <script src="calculator.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
